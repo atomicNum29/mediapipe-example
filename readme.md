@@ -2,7 +2,7 @@
 
 This project demonstrates how to run a Mediapipe model on a Raspberry Pi 5. The code is based on the examples provided in the [Mediapipe Samples repository](https://github.com/google-ai-edge/mediapipe-samples). 
 
-However, the code has been modified to use the latest recommended camera module, **Picamera2**, instead of the default camera module.
+However, the code has been modified to use the latest recommended camera module, **Picamera2**, instead of the cv2.VideoCapture.
 
 ## Features
 - Mediapipe model integration on Raspberry Pi 5.
@@ -31,12 +31,17 @@ However, the code has been modified to use the latest recommended camera module,
 	source .venv/bin/activate
 	```
 
-4. Download the required models for each example using the `download_model.sh` script:
+4. Navigate to the example directory you want to run:
+	```bash
+	cd example_directory_name
+	```
+
+5. Download the required models for each example using the `download_model.sh` script:
 	```bash
 	./download_model.sh
 	```
 
-5. Run the Python script to test the Mediapipe model with Picamera2:
+6. Run the Python script to test the Mediapipe model with Picamera2:
 	```bash
 	python example_script.py
 	```
