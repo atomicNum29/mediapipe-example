@@ -10,8 +10,8 @@ However, the code has been modified to use the latest recommended camera module,
 
 ## Requirements
 - Raspberry Pi 5 (or Raspberry Pi 4)
-- Picamera2 module
-- Python 3.x
+- Picamera2 module (pre-installed on Raspberry Pi OS)
+- Python 3.x (pre-installed on Raspberry Pi OS)
 - Mediapipe library
 
 ## Setup and Usage
