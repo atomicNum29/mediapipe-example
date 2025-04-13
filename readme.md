@@ -15,7 +15,29 @@ However, the code has been modified to use the latest recommended camera module,
 - Mediapipe library
 
 ## Setup and Usage
-1. Clone this repository.
-2. Follow the instructions in the `setup` section to install dependencies.
-3. Run the example script to test the Mediapipe model with Picamera2.
+1. Clone this repository:
+	```bash
+	git clone https://github.com/your-username/mediapipe-example.git
+	cd mediapipe-example
+	```
+
+2. Run the `setup.sh` script to install dependencies:
+	```bash
+	./setup.sh
+	```
+
+3. Activate the virtual environment created by the setup:
+	```bash
+	source .venv/bin/activate
+	```
+
+4. Download the required models for each example using the `download_model.sh` script:
+	```bash
+	./download_model.sh
+	```
+
+5. Run the Python script to test the Mediapipe model with Picamera2:
+	```bash
+	python example_script.py
+	```
 
