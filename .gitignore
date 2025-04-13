@@ -1,8 +1,12 @@
 # Ignore the virtual environment
 .venv/
 
-# models
+# TensorFlow Lite model
+*.tflite
+
+# MediaPipe Task files
 *.task
 
 # python
 __pycache__/
+**/*.pyc
