@@ -96,10 +96,13 @@ def run(model: str, num_hands: int,
 
 	# Continuously capture images from the camera and run inference
 	while True:
-		frame = picam2.capture_array()
-		frame = cv2.flip(frame, 1)
+		# Capture an image from the camera
+		image = picam2.capture_array()
+		image = cv2.flip(image, 1)
 
-		mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=frame)
+		# Convert the image from BGR to RGB as required by the TFLite model.
+		rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+		mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_image)
 
 		# Run hand landmarker using the model.
 		detector.detect_async(mp_image, time.time_ns() // 1_000_000)
@@ -107,7 +110,7 @@ def run(model: str, num_hands: int,
 		# Show the FPS
 		fps_text = 'FPS = {:.1f}'.format(FPS)
 		text_location = (left_margin, row_size)
-		current_frame = frame
+		current_frame = image
 		cv2.putText(current_frame, fps_text, text_location,
 					cv2.FONT_HERSHEY_DUPLEX,
 					font_size, text_color, font_thickness, cv2.LINE_AA)

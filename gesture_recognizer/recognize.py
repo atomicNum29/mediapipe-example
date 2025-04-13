@@ -106,7 +106,8 @@ def run(model: str, num_hands: int,
 		image = cv2.flip(image, 1)
 
 		# Convert the image from BGR to RGB as required by the TFLite model.
-		mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=image)
+		rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+		mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_image)
 
 		# Run gesture recognizer using the model.
 		recognizer.recognize_async(mp_image, time.time_ns() // 1_000_000)
