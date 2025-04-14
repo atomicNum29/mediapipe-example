@@ -17,7 +17,7 @@ However, the code has been modified to use the latest recommended camera module,
 ## Setup and Usage
 1. Clone this repository:
 	```bash
-	git clone https://github.com/your-username/mediapipe-example.git
+	git clone https://github.com/atomicNum29/mediapipe-example.git
 	cd mediapipe-example
 	```
 
